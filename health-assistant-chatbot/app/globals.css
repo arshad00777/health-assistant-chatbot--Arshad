@@ -1,0 +1,74 @@
+/* Design tokens
+   Palette:
+     --ink       #16302E  deep teal-black, headlines & primary text
+     --paper     #F3F5F3  cool off-white background (not cream/terracotta)
+     --panel     #FFFFFF  card/panel surfaces
+     --line      #DCE3E0  hairline borders/dividers
+     --jade      #2F6F62  primary accent (trust, clinical calm)
+     --jade-deep #1F4E44  hover/active state of accent
+     --amber     #9A6A00  caution / non-emergency flag
+     --danger    #B3261E  emergency / urgent flag
+   Type:
+     Headlines: 'Newsreader' (serif) — calm, editorial, medical-journal feel
+     UI/body:   'IBM Plex Sans' — clinical, legible, slightly technical
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --ink: #16302e;
+  --ink-soft: #3f5654;
+  --paper: #f3f5f3;
+  --panel: #ffffff;
+  --line: #dce3e0;
+  --jade: #2f6f62;
+  --jade-deep: #1f4e44;
+  --jade-tint: #e7efec;
+  --amber: #9a6a00;
+  --amber-tint: #fbf1dd;
+  --danger: #b3261e;
+  --danger-tint: #fbe9e7;
+
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--jade-deep);
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--jade-tint);
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--jade);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
